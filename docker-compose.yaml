@@ -1,8 +1,11 @@
 services:
   app:
     build: .
+    volumes:
+      - ./documents:/code/documents
     command: uv run run_in_cli.py
-    restart: always
+    extra_hosts:
+      - host.docker.internal:host-gateway
     depends_on:
       - ollama
     networks:
