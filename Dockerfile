@@ -5,7 +5,6 @@ WORKDIR /code
 
 RUN pip install uv
 
-COPY ./query_api ./query_api
 COPY pyproject.toml .
 COPY uv.lock .
 COPY run_in_cli.py .
